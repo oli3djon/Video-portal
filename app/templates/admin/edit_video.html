@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Новое видео' if mode=='new' else 'Редактирование' }}{% endblock %}
+{% block content %}
+  <h1 class="h3 fw-bold mb-4">{{ 'Новое видео' if mode=='new' else 'Редактирование видео' }}</h1>
+  <form method="post" enctype="multipart/form-data" class="card border-0 shadow-lg p-4 rounded-4">
+    {{ form.hidden_tag() }}
+    <div class="row g-3">
+      <div class="col-lg-6">
+        <label class="form-label">Заголовок</label>
+        {{ form.title(class="form-control form-control-lg", placeholder="Например: Обзор приложения") }}
+      </div>
+      <div class="col-lg-6">
+        <label class="form-label">Видео файл {{ '(обязательно)' if mode=='new' else '(необязательно для замены)' }}</label>
+        {{ form.file(class="form-control form-control-lg") }}
+        <div class="form-text">Допустимые: {{ ', '.join(config['ALLOWED_EXTENSIONS']) }}</div>
+      </div>
+      <div class="col-12">
+        <label class="form-label">Описание</label>
+        {{ form.description(class="form-control", rows=5, placeholder="Короткое описание видео") }}
+      </div>
+    </div>
+    <div class="mt-4">
+      <button class="btn btn-primary btn-lg rounded-pill">{{ 'Загрузить' if mode=='new' else 'Сохранить изменения' }}</button>
+      <a class="btn btn-outline-secondary btn-lg rounded-pill" href="{{ url_for('main.admin_dashboard') }}">Отмена</a>
+    </div>
+  </form>
+{% endblock %}

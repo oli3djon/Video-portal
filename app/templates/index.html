@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Главная | Video Portal{% endblock %}
+{% block content %}
+<div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3 mb-4">
+  <h1 class="display-6 fw-bold mb-0">Видеоуроки по корпоративным порталам</h1>
+  <form class="d-flex" method="get">
+    <input type="search" class="form-control form-control-lg me-2" name="q" placeholder="Поиск по заголовку" value="{{ q }}">
+    <button class="btn btn-lg btn-outline-primary rounded-pill" type="submit">Найти</button>
+  </form>
+</div>
+{% if pagination.items %}
+<div class="row g-4">
+  {% for v in pagination.items %}
+  <div class="col-12 col-sm-6 col-lg-3">
+    <div class="card video-card h-100 shadow-lg border-0">
+      <div class="ratio ratio-16x9 rounded-top overflow-hidden">
+        <video preload="metadata">
+          <source src="{{ url_for('main.uploaded_file', filename=v.filename) }}#t=0.5" type="video/mp4">
+        </video>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-truncate">{{ v.title }}</h5>
+        <p class="card-text text-muted line-clamp-2">{{ v.description }}</p>
+        <a class="stretched-link" href="{{ url_for('main.video_detail', video_id=v.id) }}"></a>
+      </div>
+      <div class="card-footer d-flex justify-content-between small text-muted">
+        <span>{{ v.created_at.strftime('%d.%m.%Y') }}</span>
+           <span>Размер видео   {{ (config['UPLOAD_FOLDER'] ~ '/' ~ v.filename)|filesize }}</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<nav class="mt-4">
+  <ul class="pagination justify-content-center">
+    <li class="page-item {% if not pagination.has_prev %}disabled{% endif %}">
+      <a class="page-link" href="?page={{ pagination.prev_num }}&q={{ q }}">Назад</a>
+    </li>
+    {% for p in pagination.iter_pages() %}
+      {% if p %}
+        <li class="page-item {% if p==pagination.page %}active{% endif %}"><a class="page-link" href="?page={{ p }}&q={{ q }}">{{ p }}</a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link">…</span></li>
+      {% endif %}
+    {% endfor %}
+    <li class="page-item {% if not pagination.has_next %}disabled{% endif %}">
+      <a class="page-link" href="?page={{ pagination.next_num }}&q={{ q }}">Вперёд</a>
+    </li>
+  </ul>
+</nav>
+{% else %}
+  <div class="text-center text-muted py-5">Видео пока нет</div>
+{% endif %}
+{% endblock %}

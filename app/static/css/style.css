@@ -1,0 +1,143 @@
+:root{
+  --glass-bg: rgba(255,255,255,0.6);
+  --glass-border: rgba(255,255,255,0.4);
+}
+.bg-gradient{
+  background: radial-gradient(1200px 600px at 10% -10%, #e0f2ff 0%, transparent 60%),
+              radial-gradient(1000px 500px at 90% 10%, #ffd6e7 0%, transparent 60%),
+              linear-gradient(180deg, #f6f9ff 0%, #f1f5ff 100%);
+  min-height: 100vh;
+}
+.glassy-nav{
+  backdrop-filter: blur(8px);
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-border);
+}
+.video-card video, .admin-card video {
+  object-fit: cover;
+}
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+.rounded-4 { border-radius: 1rem!important; }
+.rounded-pill { border-radius: 50rem!important; }
+
+
+.btn {
+    padding: 10px 20px;
+    background: #1f6feb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #1251a1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slide-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 24px;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  background: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  padding: 16px 44px 16px 16px;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform .4s ease, opacity .4s ease;
+  z-index: 9999;
+}
+
+.slide-panel.show {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.slide-title {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.slide-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #8b949e;
+}
+
+.slide-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #c9d1d9;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.slide-close:hover {
+  background: #21262d;
+}
+
+/* Небольшой твик для мобильных */
+@media (max-width: 480px) {
+  .slide-panel {
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+}
+
+
+
+
+kbd {
+  padding: 1px 6px 1px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: rgb(0, 0, 0); 
+  text-decoration: none; 
+  font-size: 14px;   
+}
+
+a {
+    text-decoration: none; 
+}
+
+.caption {
+  /*text-align: center !important;*/
+  position: absolute; /* Надпись */
+  bottom: 0;
+  top: auto;
+  left: auto;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10/11 */
+    user-select: none; /* Standard syntax */
+}
