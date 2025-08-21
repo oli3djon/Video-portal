@@ -35,9 +35,13 @@ flask --app app run --debug
 - `UPLOAD_MAX_MB` – максимальный размер файла в мегабайтах (по умолчанию 200)
 - `ALLOWED_EXTENSIONS` – список расширений (по умолчанию: mp4, mov, webm, mkv)
 
-## фото
+## Скриншоты
 <img width="1902" height="911" alt="image" src="https://github.com/user-attachments/assets/56b6e1a1-78b9-4a27-966a-6c9426d54bef" />
 <img width="1676" height="673" alt="image" src="https://github.com/user-attachments/assets/854e8220-6704-4578-8c02-5cc75f4ba03a" />
+<img width="1769" height="897" alt="image" src="https://github.com/user-attachments/assets/3ea7e1c5-77b2-4500-8e8c-84e55344ec53" />
+<img width="1728" height="670" alt="image" src="https://github.com/user-attachments/assets/fc57fff2-82be-4ceb-8571-17884c31f608" />
+
+
 
 
 
