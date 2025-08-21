@@ -37,27 +37,25 @@ flask --app app run --debug
 
 ## Структура
 ```
+flask_video_portal/
+│── flask_video_portal/
+│   │── app/              # Основное приложение
+│   │── uploads/          # Папка для загруженных видео
+│   │── venv/             # Виртуальное окружение
+│   │── manage.py         # Точка запуска
+│   │── README.md
+│   │── requirements.txt  # Зависимости
+│   │── videos.db         # SQLite база данных
 app/
-  __init__.py
-  models.py
-  forms.py
-  auth.py
-  routes.py
-  utils.py
-  static/
-    css/style.css
-    js/app.js
-    img/logo.svg
-  templates/
-    base.html
-    index.html
-    video_detail.html
-    upload_success.html
-    admin/
-      dashboard.html
-      edit_video.html
-    auth/
-      login.html
-uploads/  # сюда сохраняются видео
-manage.py
+│── __init__.py     # Инициализация Flask-приложения
+│── auth.py         # Аутентификация / авторизация
+│── forms.py        # Flask-WTF формы
+│── models.py       # SQLAlchemy модели
+│── routes.py       # Основные маршруты
+│── utils.py        # Вспомогательные функции
+│── static/         # CSS, JS, изображения
+│── templates/      # HTML-шаблоны
+
+
+
 ```
