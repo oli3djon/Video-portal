@@ -36,7 +36,9 @@ flask --app app run --debug
 - `ALLOWED_EXTENSIONS` – список расширений (по умолчанию: mp4, mov, webm, mkv)
 
 ## фото
-![Uploading image.png…]()
+<img width="1902" height="911" alt="image" src="https://github.com/user-attachments/assets/56b6e1a1-78b9-4a27-966a-6c9426d54bef" />
+
+
 
 
 ## Структура
