@@ -37,6 +37,8 @@ flask --app app run --debug
 
 ## фото
 <img width="1902" height="911" alt="image" src="https://github.com/user-attachments/assets/56b6e1a1-78b9-4a27-966a-6c9426d54bef" />
+<img width="1676" height="673" alt="image" src="https://github.com/user-attachments/assets/854e8220-6704-4578-8c02-5cc75f4ba03a" />
+
 
 
 
