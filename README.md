@@ -35,6 +35,10 @@ flask --app app run --debug
 - `UPLOAD_MAX_MB` – максимальный размер файла в мегабайтах (по умолчанию 200)
 - `ALLOWED_EXTENSIONS` – список расширений (по умолчанию: mp4, mov, webm, mkv)
 
+## фото
+![Uploading image.png…]()
+
+
 ## Структура
 ```
 flask_video_portal/
